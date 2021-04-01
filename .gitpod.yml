@@ -5,7 +5,10 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: sudo docker-up
-    command: cd container-support/compose && ./start-stack.sh
-  - init: ./gradlew build
+  - init: |
+      sudo docker-up
+      cd /workspace/connect/container-support/compose
+      ./start-stack.sh
+      cd /workspace/connect/container
+      ./gradlew build
     command: ./gradlew run
