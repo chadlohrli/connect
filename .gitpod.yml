@@ -9,7 +9,7 @@ tasks:
     command: |
       cd /workspace/connect/container-support/compose
       ./start-stack.sh
-    command: |
+  - before: |
       cd /workspace/connect/container
       ./gradlew build
-  - command: ./gradlew run
+    command: ./gradlew run
