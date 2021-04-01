@@ -7,9 +7,4 @@ ports:
 tasks:
   - init: sudo docker-up
     command: |
-      cd /workspace/connect/container-support/compose
-      ./start-stack.sh
-  - before: |
-      cd /workspace/connect/container
-      ./gradlew build
-    command: ./gradlew run
+      cd /workspace/connect/container-support/compose && ./start-stack.sh
